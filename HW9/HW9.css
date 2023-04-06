@@ -1,0 +1,26 @@
+.slide {
+	display: none;
+}
+.slideShowing {
+	display: block;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+body{
+	background-color: mediumpurple;
+}
+h1 {
+
+	font-family: Verdana;
+	font-size: 25pt;
+	color: hotpink;
+
+}
+.slide{
+	max-width: 50%;
+	height: auto;
+
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HW9</title>
+	<meta charset = "utf-8">
+	<link rel="stylesheet" href="HW9.css">
+</head>
+
+<body onload="slideshow()">
+
+	<h1> Travel Show </h1>
+		<div class = "slide">
+			<img src = "agra_fort.jpg"  alt="agra_fort" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "ajanta_ellora.jpeg"  alt="ajanta_ellora" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "akshardham_temple.jpg" alt="akshardham_temple" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "gateway_of_india.jpg" alt="gateway_of_india" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "hawa_mahal.jpeg" alt="hawa_mahal" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "mehrangarh_fort.jpg" alt="mehrangarh_fort" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "mysore_palace.jpeg" alt="mysore_palace" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "qutub_minar.jpg" alt="qutub_minar" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "sun_temple.jpg" alt="sun_temple" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "taj_mahal.jpeg" alt="taj_mahal" width="640" height="480">
+		</div>
+
+		<div class = "slide">
+			<img src = "victoria_memorial.jpg" alt="victoria_memorial" width="640" height="480">
+		</div>
+
+
+    <button onclick="startIt()">Start</button>
+ 
+    <button onclick="stopIt()">Stop</button>
+
+
+	<script type = "text/javascript">
+		var slides = document.querySelectorAll('.slide');
+		var currentSlide = 0;
+		var slideInterval = setInterval(slideshow, 3000);
+
+		function slideshow() {
+			slides[currentSlide].className = 'slide';
+			currentSlide = (currentSlide + 1)%slides.length;
+			slides[currentSlide].className = 'slideShowing';
+		}
+		function startIt() {
+         slideInterval = setInterval(slideshow, 3000);
+      	}
+
+      //onclick function to stop the slideshow
+      	function stopIt() {
+        	clearInterval(slideInterval);
+        	var currentSlide = 0;	
+    	}
+
+	</script>
+</body>
+</html>
