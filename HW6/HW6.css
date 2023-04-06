@@ -1,0 +1,20 @@
+.calc{
+	font-family: Garamond, serif;
+}
+
+body{
+	border-style: double;
+	border-color:#60468A;
+	background-color: lightblue;
+	padding: 2%;
+}
+
+h1{
+	text-align: center;
+}
+
+hr{
+	height: 2px;
+	background-color:#60468A;
+	border: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title>Mortgage Calculator</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="mortgage calculator">
+	<meta name="author" content="Ginger Hudson">
+	<script src="HW6.js" defer></script>
+	<link rel="stylesheet" href="HW6.css">
+</head> 
+
+<body>
+<form>
+<div class="calc">
+<h1>Mortgage Calculator</h1>
+<p> Principal Amount:<input type="text" id="inAmount"></p>
+<p> Yearly Interest Rate:<input type="text" id="inInterest"></p>
+<p> Loan Term in Months:<input type="text" id="inTerm"></p>
+<p> <input type="button" value="Calculate" onclick="payments()">
+
+
+<br>
+<hr/>
+<p> Monthly Payment: <input type="text" id="outMonthly"></p>
+<p> Sum of All Payments: <input type="text" id="outSum"></p>
+<p> Total Interest: <input type="text" id="outInterest"></p>
+</div>
+
+
+<p> <input type="button" value="Reset" onclick="reset()"></p>
+</form>
+
+
+
+
+
+
+
+
+</body>
+</html>
