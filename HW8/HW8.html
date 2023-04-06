@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <title>Galaxies</title>
+   <meta charset="UTF-8">
+   <meta name="description" content="display random img">
+   <meta name="author" content="Ginger Hudson">
+   
+   <link rel="stylesheet" href="HW8.css">
+</head> 
+
+
+<body onload="changeImg()"> 
+
+
+   <script>
+   var top_img = "cluster"
+   var img_src = new Array ("cluster", "interact", "m51", "m104", "ngc1300", "ngc6217")
+   var caption = new Array("Galaxy Cluster", "Interacting Galaxies", "M51", "M104", "NGC1300", "NGC6217")
+
+   function get_img() {
+      var rnd_idx = Math.trunc (Math.random() * img_src.length)
+      document.getElementById("caption").innerHTML=caption[rnd_idx]
+
+      return img_src[rnd_idx]
+   }
+
+   function changeImg() {
+      var new_img = get_img()
+      styleTop = document.getElementById(top_img).style
+      styleNew = document.getElementById(new_img).style
+
+      styleTop.zIndex = "0"
+      styleNew.zIndex = "10"
+      top_img = new_img
+   }
+</script>
+   <form action="echo.cgi">
+      <p>
+         <img class="img1" id="cluster" src="GalaxyCluster.jpg" alt="(Picture of a galaxy cluster)" width="640" height="480">
+
+         <img class="img2" id="interact" src="InteractingGalaxies.jpg" alt="(Picture of a interacting galaxy)" width="640" height="480">
+
+         <img class="img3" id="m51" src="M51.jpg" alt="(Picture of a m51)" width="640" height="480">
+
+         <img class="img4" id="m104" src="M104.jpg" alt="(Picture of a m104r)" width="640" height="480">
+
+         <img class="img5" id="ngc1300" src="NGC1300.jpg" alt="(Picture of a ngc1300)" width="640" height="480">
+
+         <img class="img6" id="ngc6217" src="NGC6217.jpg" alt="(Picture of a ngc6217)" width="640" height="480">
+      </p>
+      <p class="cap"> Caption: <span id="caption"> </span></p>
+
+
+
+
+      <p class="btn">
+         <input type="button" value="Change Image" onclick="changeImg()">
+      </p>
+   </form>
+
+</body>
+</html>
