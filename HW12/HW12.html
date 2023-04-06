@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Sign-Up Sheet</title>
+</head>
+<body>
+	<?php
+	// Open the file for reading
+	$filename = "signup.txt";
+	$file = fopen($filename, "r") or die("Unable to open file!");
+	
+	// Initialize an empty array to store the sign-up sheet data
+	$signupSheet = array();
+	
+	// Read the data from the file and store it in the array
+	while(!feof($file)) {
+		$line = fgets($file);
+		if ($line !== false) {
+			$signupSheet[] = explode(",", trim($line));
+		}
+	}
+	
+	// Close the file
+	fclose($file);
+	
+	// Check if the form has been submitted
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		// Open the file for appending
+		$file = fopen($filename, "a") or die("Unable to open file!");
+		
+		// Add the new sign-up data to the array
+		foreach ($_POST as $key => $value) {
+			$signupSheet[$key][] = $value;
+		}
+		
+		// Write the new sign-up data to the file
+		foreach ($signupSheet as $row) {
+			fwrite($file, implode(",", $row) . "\n");
+		}
+		
+		// Close the file
+		fclose($file);
+		
+		// Refresh the page to display the updated sign-up sheet
+		header("Location: " . $_SERVER["PHP_SELF"]);
+		exit();
+	}
+	?>
+	
+	<h1>Online Sign-Up Sheet</h1>
+	
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		<table border="1">
+			<tr>
+				<th>Time</th>
+				<th>Sign-Up List</th>
+			</tr>
+			<?php
+			// Display the sign-up sheet data in the table
+			for ($i = 0; $i < count($signupSheet); $i++) {
+				echo "<tr>";
+				echo "<td>" . $signupSheet[$i][0] . "</td>";
+				echo "<td>";
+				if (count($signupSheet[$i]) > 1) {
+					foreach ($signupSheet[$i] as $j => $name) {
+						if ($j > 0) {
+							echo "<span>" . $name . "</span>";
+						}
+					}
+				} else {
+					echo "<input type='text' name='" . $i . "[]'>";
+				}
+				echo "</td>";
+				echo "</tr>";
+			}
+			?>
+		</table>
+		<br>
+		<input type="submit" value="Sign Up">
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JigSaw-Puzzle</title>
+	<meta charset = "utf-8">
+    <link rel="stylesheet" href="HW11.css">
+    <style>
+    	.exclude-me{
+        	background-repeat: no-repeat;
+        	background-position: center center;
+        	background-size: cover;
+    	}
+    	#exclude-me{
+       		position: absolute;
+            top: 100px;
+            left: 100px;
+         }
+    	img {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+         }
+
+   </style> 
+
+</head>
+<img id="exclude-me" src = "puzzleback.gif"  alt="puzzleback">
+
+<body>
+	<h1>Jig-Saw Puzzle</h1>
+	<div id = "txt"></div>
+   <div id="imagecontainer">
+   <span style = "position: absolute; top: 400px; left: 0px;" ><img src="data.jpg" id="piece-1" alt="1"></span>
+    <span style = "position: absolute; top: 400px; left:  150px;"><img src="data.jpg" id="piece-2"></span>
+    <span style = "position: absolute; top: 400px; left: 300px;"><img src="data.jpg" id="piece-3" ></span>
+   <span style = "position: absolute; top: 400px; left: 450px;"> <img src="" id="piece-4" ></span>
+    <span style = "position: absolute; top: 400px; left: 600px;"><img src="data.jpg" id="piece-5" ></span>
+    <span style = "position: absolute; top: 400px; left: 750px;"> <img src="data.jpg" id="piece-6"></span>
+    <span style = "position: absolute; top: 550px; left: 0px;">  <img src="data.jpg" id="piece-7"></span>
+    <span style = "position: absolute; top: 550px; left:   150px;"> <img src="data.jpg" id="piece-8"></span>
+    <span style = "position: absolute; top: 550px; left:  300px;"><img src="data.jpg" id="piece-9"></span>
+    <span style = "position: absolute; top: 550px; left: 450px;"><img src="data.jpg" id="piece-10"></span>
+    <span style = "position: absolute; top: 550px; left: 600px;"><img src="data.jpg" id="piece-11"></span>
+    <span style = "position: absolute; top: 550px; left: 750px;"><img src="data.jpg" id="piece-12"></span>
+
+</div>
+</div>
+   
+
+   <script type = "text/javascript" src = "hw11.js"></script>
+   <button onclick="clearInterval(time)">Done</button>
+</p>
+</body>
+</html>
