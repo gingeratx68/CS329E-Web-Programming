@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title> Campus Visit Feedback Form</title>  
+	<meta charset="utf-8">
+	<meta name="description" content="feedback form">
+	<meta name="author" content="Ginger Hudson">
+	<link rel="stylesheet" href="stylesheet2.css">
+</head>
+	
+<body>
+<form action="echo.cgi" method="get">
+<h2> Campus Visit Feedback Form </h2>
+<br>
+<label for="Name"> Name:</label>
+<input class="input" type="text" id="Name" name="Name" placeholder="Name">
+<br>
+<label for="address"> Address:</label>
+<input class="input" type="text" id="address" name="address" placeholder="Address">
+<br>
+<label for="email"> Email Address:</label>
+<input class="input" type="text" id="email" name="email" placeholder="Email Address">
+<br>
+<table>
+	<tr>
+		<td><h4> What aspect of campus did you like most? </h4></td>
+		<td><input type="checkbox" id="student" name="student" value="Student">
+		<label for="student"> Student</label><br></td>
+		<td><input type="checkbox" id="location" name="location" value="location">
+		<label for="location"> Location</label></td>
+		<td><input type="checkbox" id="campus" name="campus" value="campus">
+		<label for="campus"> Campus</label></td>
+		<td><input type="checkbox" id="courses" name="courses" value="courses">
+		<label for="courses"> Courses Offered</label></td>
+		<td><input type="checkbox" id="housing" name="housing" value="housing">
+		<label for="housing"> Housing</label></td>
+		<td> <input type="checkbox" id="sports" name="sports" value="sports">
+		<label for="sports"> Sports</label></td>
+	</tr>
+	<tr>
+		<td><h4> How did you become interested in the University? </h4></td>
+		<td><input type="radio" id="family" name="interest" value="family">
+		<label for="family">Family</label></td>
+		<td><input type="radio" id="friends" name="interest" value="friends"><label for="friends">Friends</label></td>
+		<td> <input type="radio" id="television" name="interest" value="television"><label for="television">Television</label></td>
+		<td><input type="radio" id="internet" name="interest" value="internet"><label for="internet">Internet</label></td>
+		<td><input type="radio" id="other" name="interest" value="other"><label for="other">Other</label></td>
+	</tr>
+	<tr>
+		<td><h4> Departments Visited </h4></td>
+		<td><label for="department">Choose a Department:</label><select name="department" id="department" >
+		<option value="choose">None</option>
+ 		<option value="science">College of Natural Sciences</option>
+		<option value="business">McCombs School of Business</option>
+ 		<option value="moody">Moody College of Communication</option>
+ 		<option value="pharm">College of Pharamacy</option>
+ 		<option value="geo">Jackson School of Geosciences</option>
+ 		<option value="pr">LBJ School of Public Affairs</option>
+ 		<option value="arch">School of Architecture</option>
+ 		<option value="info">School of Information</option>
+ 		<option value="nursing">School of Nursing</option>
+ 		<option value="sw">Steve Hicks School of Social Work</option>
+ 		
+		</select>
+	</tr>
+
+	<tr>
+		<th><label> Additional Comments:</label></th>
+		<td ><textarea class="text" name="comments" rows="4" cols="50"></textarea></td>
+	</tr>
+	<tr>
+		<th><input class="button" type="submit"></th>
+	</tr>
+	<tr>
+		<th><input class="button" type="reset"></th>
+	</tr>
+</table>
+</form>
+</body>
