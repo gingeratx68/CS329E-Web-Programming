@@ -1,0 +1,20 @@
+h2{
+	font family: Arial, san-serif;
+	color:#E7AAE7;
+}
+p{
+	font family: Arial, san-serif;
+	text-align: center;
+	background-color: #A8ABE5;
+	border: 1px #E7AAE7;
+	padding: 2px;
+	margin: 5px;
+}
+body{
+	font family: Arial, san-serif;
+	text-align: center;
+	background-color: #A8ABE5;
+	border: 1px #424591;
+	padding: 2px;
+	margin: 5px;
+}
