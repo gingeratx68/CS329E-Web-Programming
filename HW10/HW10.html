@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <title>Quiz 1</title>
+   <meta charset="UTF-8">
+   <meta name="description" content="Quiz 1">
+   <meta name="author" content="Ginger Hudson">
+   <link rel="stylesheet" href="HW10.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head> 
+
+<body>
+	<h1>Elements of Web Programming - Quiz 1</h1>
+	<form id = "quiz1" method = "post">
+
+	<div class = "truefalse">
+		<div class = "Q1">
+			1)  "URL" stands for "Universal Reference Link".<br>
+			<input type = "radio" id = "wrongTF1" name = "TF1">True<br>
+			<input type = "radio" id = "rightTF1" name = "TF1">False
+		</div>
+		<br>
+		<div class = "Q2">
+			2. An Apple MacBook is an example of a Linux system.<br>
+			<input type = "radio" id = "rightTF2" name = "TF2">True<br>
+			<input type = "radio" id = "wrongTF2" name = "TF2">False
+		</div>
+	</div>
+	<br>
+
+	<div class = "multiplechoice">
+		<div class = "Q3">
+			3. Which of these do NOT contribute to packet delay in a packet switching network?<br>
+			<input type = "checkbox" id = "1wrongMC3" class = "MC3">a) Processing delay at a router<br>
+			<input type = "checkbox" id = "1rightMC3" class = "MC3">b) CPU workload on a client<br>
+			<input type = "checkbox" id = "2wrongMC3" class = "MC3">c) Transmission delay along a communications link<br>
+			<input type = "checkbox" id = "3wrongMC3" class = "MC3">d) Propagation delay<br>
+		</div>
+		<br>
+		<div class = "Q4">
+			4. This Internet layer is responsible for creating the packets that move across the network.<br>
+			<input type = "checkbox" id = "4wrongMC4" class = "MC4">a) Physical<br>
+			<input type = "checkbox" id = "5wrongMC4" class = "MC4">b) Data Link<br>
+			<input type = "checkbox" id = "2rightMC4" class = "MC4">c) Network<br>
+			<input type = "checkbox" id = "6wrongMC4" class = "MC4">d) small mass<br>
+		</div>
+	</div>
+	<br>
+
+	<div class = "fillblank">
+		<div class = "Q5">
+			5)<input type = "text" id = "Q5">is a networking protocol that runs over TCP/IP, and governs communication between web browsers and web servers.
+
+		</div>
+		<br>
+		<div class = "Q6">
+			6) A small icon displayed in a browser table that identifies a website is called a <input type = "text" id = "Q6">.
+	</div>
+	</div>
+	<br>
+	<input type = "submit" value = "Grade" name = "gradeBtn">
+	<input type = "reset" value = "Clear">
+	</form>
+
+
+	<script type = "text/javascript">
+
+		document.getElementById('quiz1').gradeBtn.onclick = correct;
+
+		var rightAnswers = 0;
+		
+		function correct() {
+
+			if (document.getElementById("rightTF1").checked == true) {
+				rightAnswers ++;
+			};
+			if (document.getElementById("rightTF2").checked == true) {
+				rightAnswers ++;
+			};
+			if (document.getElementById("1rightMC3").checked == true) {
+				rightAnswers ++;
+			};
+			if (document.getElementById("2rightMC4").checked == true) {
+				rightAnswers ++;
+			};
+			if ((document.getElementById("Q5").value).toUpperCase() === ("HTTP").toUpperCase()) {
+				rightAnswers ++;
+			};
+			if ((document.getElementById("Q6").value).toUpperCase() === ("favicon").toUpperCase())  {
+				rightAnswers ++;
+			};
+			var grade = ("Your grade is " + rightAnswers + "/6");
+			alert(grade);
+		};
+
+		$('.MC3').on('change', function () {
+			$('.MC3').not(this).prop('checked', false);
+		});
+
+		$('.MC4').on('change', function () {
+			$('.MC4').not(this).prop('checked', false);
+		});
+
+	</script>
+
+
+
+</body>
+</html>
+
+
+
